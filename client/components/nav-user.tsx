@@ -8,7 +8,6 @@ import {
   Sun,
   Moon,
   Monitor,
-  User,
   Settings,
   LogOut,
 } from "lucide-react"
@@ -48,8 +47,8 @@ type NavUserInfo = {
 export function NavUser({
   user,
   showEmail = true,
-  showInitials = true,
-  circularAvatar = false,
+  showInitials = false,
+  circularAvatar = true,
 }: {
   user?: NavUserInfo
   showEmail?: boolean
@@ -148,13 +147,6 @@ export function NavUser({
                 <DropdownMenuShortcut className="tracking-tight">
                   Coming soon
                 </DropdownMenuShortcut>
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                render={<Link href="/" />}
-                onClick={() => setOpenMobile(false)}
-              >
-                <User className="text-[#C39D03]" />
-                Profile
               </DropdownMenuItem>
               <DropdownMenuItem
                 render={<Link href="/settings" />}
